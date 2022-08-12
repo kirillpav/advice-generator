@@ -10,7 +10,7 @@ import {
 } from "./AdviceGenerator.styled";
 
 const AdvideGenerator = () => {
-  const [advice, setAdvice] = useState();
+  const [advice, setAdvice] = useState("");
 
   async function getAdvice() {
     const advice = await axios("https://api.adviceslip.com/advice");
@@ -25,11 +25,8 @@ const AdvideGenerator = () => {
   return (
     <StyledWrapper>
       <StyledCard>
-        <StyledTitle>ADVICE #${advice.id}</StyledTitle>
-        <StyledText>
-          “It is easy to sit up and take notice, what's difficult is getting up
-          and taking action.”
-        </StyledText>
+        <StyledTitle>ADVICE #{advice.id}</StyledTitle>
+        <StyledText>"{advice.advice}"</StyledText>
         <StyledDivider />
         <StyledButton type="button" onClick={getAdvice} />
       </StyledCard>
