@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 import DividerMobile from "../images/pattern-divider-mobile.svg";
+import DividerDesktop from "../images/pattern-divider-desktop.svg";
+
 import DiceIcon from "../images/icon-dice.svg";
 
 export const StyledWrapper = styled.div`
@@ -88,7 +90,7 @@ export const StyledText = styled.p`
   }
 `;
 
-export const StyledDividerMobile = styled.div`
+export const StyledDivider = styled.div`
   position: absolute;
   bottom: 64px;
   left: 24px;
@@ -100,6 +102,15 @@ export const StyledDividerMobile = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 1440px) {
+    background-image: url(${DividerDesktop});
+
+    width: 444px;
+
+    bottom: 72px;
+    left: 48px;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -119,4 +130,18 @@ export const StyledButton = styled.button`
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media screen and (min-width: 1440px) {
+    left: 238px;
+
+    &:hover {
+      background: #53ffaa;
+      box-shadow: 0px 0px 40px #53ffaa;
+
+      background-image: url(${DiceIcon});
+      background-size: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
 `;
